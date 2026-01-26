@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
 
     public LayerMask buttonLayer;
     public LayerMask Interactive;
-    public Tilemap pathTilemap;
+    public LayerMask Walls;
 
     private void Awake()
     {
@@ -27,11 +27,9 @@ public void HandleUpdate()
         return;
     }
 
-    // pobieramy input zawsze
     input.x = Input.GetAxisRaw("Horizontal");
     input.y = Input.GetAxisRaw("Vertical");
 
-    // animacje tylko jeśli jest input
     if (!isMoving && input != Vector2.zero)
     {
         animator.SetFloat("move x", input.x);
@@ -100,7 +98,7 @@ public void HandleUpdate()
 
     bool IsWalkable(Vector3 worldPosition)
     {
-        if (Physics2D.OverlapCircle(worldPosition, 0.2f, Interactive) != null) {
+        if (Physics2D.OverlapCircle(worldPosition, 0.2f, Interactive) != null || Physics2D.OverlapCircle(worldPosition, 0.2f, Walls) != null) {
             return false;
         }
         return true;

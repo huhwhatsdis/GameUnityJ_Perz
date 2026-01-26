@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Path
   - Water
   - UI
-  - 
+  - Background
   - Walls
   - Interactive
   - Button
@@ -38,23 +38,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1133365047
+    locked: 0
+  - name: Paths
+    uniqueID: 2168454107
+    locked: 0
   - name: Walls
     uniqueID: 862897353
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Paths
-    uniqueID: 2168454107
-    locked: 0
   - name: Interactive
     uniqueID: 4260092683
     locked: 0
-  - name: baby
-    uniqueID: 1787004375
-    locked: 0
   - name: Button
     uniqueID: 3838832297
+    locked: 0
+  - name: baby
+    uniqueID: 1787004375
     locked: 0
   m_RenderingLayers:
   - Default
